@@ -121,6 +121,7 @@ public class ActivityLongSpeech extends Activity {
         intent.put("decoder", 0);
         intent.put("vad.endpoint-timeout", 0); // 0 = 长语音，不会自动停止
         intent.put("vad", "dnn");
+        intent.put("pid", 1537); // 1537为输入法模式的解码器, 支持标点, 详见文档
 
         asr.send(SpeechConstant.ASR_CANCEL, "{}", null, 0, 0);
         asr.send(SpeechConstant.ASR_START, new JSONObject(intent).toString(), null, 0, 0);
